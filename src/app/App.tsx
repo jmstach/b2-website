@@ -5,6 +5,7 @@ import { Hero } from '@/app/components/landing/Hero';
 import { MenuBarFeature } from '@/app/components/landing/MenuBarFeature';
 import { PrecisionPower } from '@/app/components/landing/PrecisionPower';
 import { DeepDive } from '@/app/components/landing/DeepDive';
+import { Analytics } from '@vercel/analytics/next';
 
 export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);

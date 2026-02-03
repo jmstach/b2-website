@@ -83,10 +83,13 @@ export function MenuBarFeature() {
             Menu Bar.
           </h2>
           <p className="text-lg text-white/70 leading-relaxed max-w-md mx-auto md:mx-0">
-            Frictionless entry. B2 lives where you work. No more waiting.
+            Frictionless entry. B2 lives where you work.
           </p>
           <p className="text-lg text-white/70 leading-relaxed max-w-md mx-auto md:mx-0">
-            Just ⌘⇧B, type, and think.
+            No more waiting.
+          </p>
+          <p className="text-lg text-white/70 leading-relaxed max-w-md mx-auto md:mx-0">
+            Just type ⌘⇧B and start.
           </p>
         </motion.div>
       </div>

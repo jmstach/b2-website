@@ -89,7 +89,7 @@ export function MenuBarFeature() {
             No more waiting.
           </p>
           <p className="text-lg text-white/70 leading-relaxed max-w-md mx-auto md:mx-0">
-            Just type ⌘⇧B and start.
+            Just type <span className="text-blue-500">⌘⇧B</span> and start.
           </p>
         </motion.div>
       </div>

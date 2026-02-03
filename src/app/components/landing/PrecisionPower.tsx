@@ -15,7 +15,7 @@ export function PrecisionPower() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
-            Small footprint. <span className="text-white/40">Giant capability.</span>
+            Small footprint. <span className="text-blue-500">Giant capability.</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
             Full formula support and native formatting tools that feel like a part of your Mac.
@@ -79,17 +79,17 @@ export function PrecisionPower() {
              
              <div className="relative z-10 flex-1 flex items-center justify-center">
                 {/* Typography Visualization */}
-                <div className="scale-200 transform origin-center">
+                <div className="scale-100 md:scale-150 lg:scale-200 transform origin-center">
                    {/*<div className="font-mono text-xs text-white/30 mb-2 tracking-widest uppercase">Kerning / Ligatures</div>*/}
                    <div className="text-2xl md:text-xs text-white font-regular tracking-tight border border-white px-3.5 py-1.5">
                       <span className="inline-block mr-16">£</span>
                       12,490
                       <span className="text-white/60">.00</span>
                    </div>
-                   <div className="text-2xl md:text-xs text-white font-regular tracking-tight border-1 border-white px-3.5 py-1.5 -mt-0.25 text-left">
+                   <div className="text-2xl md:text-xs text-white font-regular tracking-tight border border-white px-3.5 py-1.5 -mt-0.25 text-left">
                       12 Jan 2026
                    </div>
-                   <div className="text-2xl md:text-xs text-white font-regular tracking-tight border-1 border-white px-3.5 py-1.5 -mt-0.25 text-right">
+                   <div className="text-2xl md:text-xs text-white font-regular tracking-tight border border-white px-3.5 py-1.5 -mt-0.25 text-right">
                       33.3%
                    </div>
                    {/* <div className="flex gap-1 mt-2 justify-center opacity-40">

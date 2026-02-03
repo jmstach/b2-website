@@ -5,7 +5,7 @@ import { Hero } from '@/app/components/landing/Hero';
 import { MenuBarFeature } from '@/app/components/landing/MenuBarFeature';
 import { PrecisionPower } from '@/app/components/landing/PrecisionPower';
 import { DeepDive } from '@/app/components/landing/DeepDive';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -35,6 +35,7 @@ export default function App() {
       <PrecisionPower />
       <MenuBarFeature />
       <DeepDive />
+      <Analytics />
     </motion.main>
   );
 }

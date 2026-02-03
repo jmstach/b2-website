@@ -1,0 +1,9 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@layer utilities {
+  .debug-layout * {
+    outline: 1px solid rgba(255, 0, 0, 0.3); /* Soft red outline */
+  }
+}

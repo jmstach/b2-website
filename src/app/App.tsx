@@ -18,7 +18,7 @@ export default function App() {
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.2, 0.3, 1],
-    ["#f5f5f7", "#f5f5f7", "#000000", "#000000"]
+    ["#f5f5f7", "#bbbbbb", "#333333", "#000000"]
   );
 
   return (
@@ -31,8 +31,8 @@ export default function App() {
       ref={containerRef}
     >
       <Hero scrollContainerRef={containerRef} />
-      <MenuBarFeature />
       <PrecisionPower />
+      <MenuBarFeature />
       <DeepDive />
     </motion.main>
   );

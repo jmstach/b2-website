@@ -62,11 +62,11 @@ export function DeepDive() {
            
            <div className="flex flex-col items-center gap-4">
               <button className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
-                Try now for free
+                Coming soon
               </button>
               <div className="flex items-center gap-4 text-xs text-white/50 mt-4">
-                 <span className="flex items-center gap-1"><Check size={12} /> One-time purchase</span>
-                 <span className="flex items-center gap-1"><Check size={12} /> Lifetime updates</span>
+                 <span className="flex items-center gap-1"><Check size={20} /> One-time purchase</span>
+                 <span className="flex items-center gap-1"><Check size={20} /> No subscriptions</span>
               </div>
            </div>
         </motion.div>
@@ -79,6 +79,7 @@ export function DeepDive() {
               <a href="#" className="hover:text-white/40 transition-colors">Support</a>
            </div>
         </footer>
+        {/* Layout Debug Size Indicator 
         <div class="fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-full bg-b2-900 px-3 py-1 font-mono text-xs font-bold text-white outline outline-1 outline-white/30">
           <span class="block sm:hidden">XS</span>
           <span class="hidden sm:block md:hidden">SM</span>
@@ -87,6 +88,7 @@ export function DeepDive() {
           <span class="hidden xl:block 2xl:hidden">XL</span>
           <span class="hidden 2xl:block">2XL</span>
         </div>
+        */}
       </div>
     </section>
     

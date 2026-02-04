@@ -19,7 +19,7 @@ export default function App() {
   const backgroundColor = useTransform(
     scrollYProgress,
     [0, 0.2, 0.3, 1],
-    ["#f5f5f7", "#bbbbbb", "#333333", "#000000"]
+    ["#f5f5f7", "#949494", "#333333", "#000000"]
   );
 
   return (

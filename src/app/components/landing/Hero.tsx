@@ -53,53 +53,53 @@ export function Hero({ scrollContainerRef }: HeroProps) {
       className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden snap-start"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-    >
+      >
       <motion.div 
         style={{ y, opacity }}
-        className="text-center z-10 px-6 max-w-4xl mx-auto flex flex-col items-center w-full"
+        // CHANGE 1: Added h-full (or max-h-full) so this container respects the screen height
+        className="text-center z-10 px-6 max-w-4xl mx-auto flex flex-col items-center w-full h-full"
       >
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl md:text-6xl font-semibold tracking-tight text-gray-900 mb-8 mt-8"
+          // CHANGE 2: Added flex-none to ensure the header never shrinks
+          className="flex-none text-5xl md:text-6xl font-semibold tracking-tight text-gray-900 mb-2 mt-8"
         >
           B2.<br/>A spreadsheet for thinking, not reporting.
         </motion.h1>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
-          }}
-          className="relative group [perspective:1000px]"
-        >
-          {/* 3D Tilt Effect Container */}
-          <div className="relative overflow-hidden  backdrop-blur-sm  transition-transform duration-200 ease-out sm:h-82 md:h-96 lg:h-auto">
-             <img 
-               src={exampleImage} 
-               alt="B2 App Interface" 
-               className="w-full transform origin-top-left scale-250 lg:scale-100"
-               /*className="w-full max-w-5xl h-auto rounded-xl shadow-sm"*/
-               /*className="h-full w-full object-cover object-left-top md:object-contain"*/
-             />
-             {/* Gloss/Reflection effect */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none mix-blend-overlay" />
-          </div>
-        </motion.div>
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+  style={{
+    rotateX,
+    rotateY,
+    transformStyle: "preserve-3d",
+  }}
+  className="relative group [perspective:1000px] flex-1 min-h-0 w-full flex items-start justify-start md:items-center md:justify-center overflow-hidden"
+>
+  <div className="relative h-full w-full">
+    <img 
+      src={exampleImage} 
+      alt="B2 App Interface" 
+      className="h-full w-full object-cover object-left-top origin-top-left scale-[2] md:scale-100 md:origin-center md:object-contain md:object-center"
+    />
+    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none mix-blend-overlay" />
+  </div>
+</motion.div>
+
+
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-8 flex flex-col items-center gap-4"
+          className="mt-8 mb-12 flex flex-col items-center gap-4"
         >
           <button className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer">
-            Download free trial
+            Coming soon
           </button>
           <p className="text-gray-400 text-xs font-medium tracking-wide">
             Designed exclusively and only for macOS

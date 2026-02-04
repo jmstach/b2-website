@@ -72,12 +72,12 @@ export function MenuBarFeature() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="order-1 md:order-2 text-center md:text-left"
         >
-          <div className="inline-flex items-center justify-center md:justify-start gap-2 mb-4">
+          {/*<div className="inline-flex items-center justify-center md:justify-start gap-2 mb-4">
              <div className="w-8 h-8 rounded-lg bg-[#333] flex items-center justify-center shadow-inner border border-white/10">
                 <LayoutGrid size={18} className="text-white" />
              </div>
              <span className="text-sm font-medium text-white/60 uppercase tracking-widest">Always Ready</span>
-          </div>
+          </div>*/}
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
             Always in your <br/>
             Menu Bar.

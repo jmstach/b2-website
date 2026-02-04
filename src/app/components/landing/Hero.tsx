@@ -64,7 +64,7 @@ export function Hero({ scrollContainerRef }: HeroProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           // CHANGE 2: Added flex-none to ensure the header never shrinks
-          className="flex-none text-5xl md:text-6xl font-semibold tracking-tight text-gray-900 mb-2 mt-8"
+          className="flex-none text-5xl md:text-6xl font-semibold tracking-tight text-gray-900 mb-8 mt-16 lg:mt-24"
         >
           B2.<br/>A spreadsheet for thinking, not reporting.
         </motion.h1>

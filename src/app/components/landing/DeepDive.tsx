@@ -79,7 +79,7 @@ export function DeepDive() {
               <a href="#" className="hover:text-white/40 transition-colors">Support</a>
            </div>
         </footer>
-        {/* Layout Debug Size Indicator */}
+        {/* Layout Debug Size Indicator 
         <div class="fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-full bg-b2-900 px-3 py-1 font-mono text-xs font-bold text-red-500 outline outline-1 outline-white/30">
           <span class="block sm:hidden">XS</span>
           <span class="hidden sm:block md:hidden">SM</span>
@@ -88,7 +88,7 @@ export function DeepDive() {
           <span class="hidden xl:block 2xl:hidden">XL</span>
           <span class="hidden 2xl:block">2XL</span>
         </div>
-        {/**/}
+        */}
       </div>
     </section>
     

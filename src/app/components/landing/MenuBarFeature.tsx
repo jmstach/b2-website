@@ -55,9 +55,10 @@ export function MenuBarFeature() {
                   </div>
                   <div className="flex items-center justify-between px-3 py-2 hover:bg-white/5 rounded-md group cursor-pointer transition-colors">
                      <div className="flex flex-col">
-                        <span className="text-sm text-white/90 font-medium">Project Tracker</span>
-                        <span className="text-xs text-white/40">Last week</span>
+                        <span className="text-sm text-white/90 font-medium">New Sheet (⌘N)</span>
+                        
                      </div>
+                      <span className="text-xs text-white/40 group-hover:text-white/80"></span>
                   </div>
                </div>
             </div>

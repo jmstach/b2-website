@@ -74,8 +74,8 @@ export function DeepDive() {
         <footer className="mt-24 w-full flex flex-col md:flex-row justify-between items-center text-xs text-white/50 border-t border-white/5 pt-8">
            <div>&copy; 2026 Stach LTD. Crafted with care in London.</div>
            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white/40 transition-colors">Privacy</a>
-              <a href="#" className="hover:text-white/40 transition-colors">Terms</a>
+              <a href="/privacy" className="hover:text-white/40 transition-colors">Privacy</a>
+              <a href="/terms" className="hover:text-white/40 transition-colors">Terms</a>
               <a href="#" className="hover:text-white/40 transition-colors">Support</a>
            </div>
         </footer>

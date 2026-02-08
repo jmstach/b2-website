@@ -76,7 +76,6 @@ export function DeepDive() {
            <div className="flex gap-6 mt-4 md:mt-0">
               <a href="/privacy" className="hover:text-white/40 transition-colors">Privacy</a>
               <a href="/terms" className="hover:text-white/40 transition-colors">Terms</a>
-              <a href="#" className="hover:text-white/40 transition-colors">Support</a>
            </div>
         </footer>
         {/* Layout Debug Size Indicator 

@@ -5,7 +5,7 @@ export function TermsOfUse() {
     <LegalLayout>
       <h1>Terms of use</h1>
       <p className="text-muted-foreground"><strong>Last updated:</strong> 7 February 2026</p>
-      <p>These terms of use ("Terms") govern your use of the B2 application and the b2.stach.ltd website (together, the "Service"), provided by Justin Stach ("we", "us", "our"), based in the United Kingdom.</p>
+      <p>These terms of use ("Terms") govern your use of the B2 application and the b2.stach.ltd website (together, the "Service"), provided by Stach Ltd. ("we", "us", "our"), based in the United Kingdom.</p>
       <p>By downloading, installing, or using B2, you agree to be bound by these Terms. If you do not agree, please do not use the Service.</p>
 
       <h2>Licence</h2>

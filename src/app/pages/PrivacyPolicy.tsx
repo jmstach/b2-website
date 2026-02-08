@@ -5,7 +5,7 @@ export function PrivacyPolicy() {
     <LegalLayout>
       <h1>Privacy policy</h1>
       <p className="text-muted-foreground"><strong>Last updated:</strong> 7 February 2026</p>
-      <p>B2 is developed by Justin Stach ("we", "us", "our"), based in the United Kingdom. This privacy policy explains what information we collect when you use the B2 application and the b2.stach.ltd website, and how we handle that information.</p>
+      <p>B2 is developed by Stach Ltd. ("we", "us", "our"), based in the United Kingdom. This privacy policy explains what information we collect when you use the B2 application and the b2.stach.ltd website, and how we handle that information.</p>
       <p>We are committed to protecting your privacy. B2 is designed as a local-first application — your spreadsheet data never leaves your device unless you explicitly choose to export or sync it yourself.</p>
 
       <h2>The B2 application</h2>
@@ -80,7 +80,7 @@ export function PrivacyPolicy() {
       <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "last updated" date. We encourage you to review this policy periodically.</p>
 
       <h2>Contact</h2>
-      <p>If you have any questions about this privacy policy or our data practices, please contact me at <a href="mailto:justin@stach.ltd">justin@stach.ltd</a></p>
+      <p>If you have any questions about this privacy policy or our data practices, please contact us at <a href="mailto:hello@stach.ltd">hello@stach.ltd</a></p>
     </LegalLayout>
   );
 }

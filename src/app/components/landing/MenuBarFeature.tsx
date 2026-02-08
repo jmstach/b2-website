@@ -1,6 +1,6 @@
 
 import { motion } from 'motion/react';
-import { LayoutGrid, Command, Search } from 'lucide-react';
+import b2MenuIcon from '../../../../assets/B2-menu.svg';
 
 export function MenuBarFeature() {
   return (
@@ -26,7 +26,7 @@ export function MenuBarFeature() {
                </div>
                <div className="flex-1"></div>
                <div className="flex gap-3 text-white/90">
-                  <LayoutGrid size={16} strokeWidth={2} />
+                  <img src={b2MenuIcon} alt="B2" className="w-4 h-4 brightness-0 invert" />
                   <span className="text-xs">Mon 9:41 AM</span>
                </div>
             </div>

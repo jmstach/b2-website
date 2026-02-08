@@ -98,7 +98,7 @@ export function Hero({ scrollContainerRef }: HeroProps) {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-8 mb-12 flex flex-col items-center gap-4"
         >
-          <a href="https://storage.stach.ltd/releases/B2-0.1.0-arm64.dmg" className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
+          <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
             Try free for 7 days
           </a>
           <p className="text-gray-400 text-xs font-medium tracking-wide">

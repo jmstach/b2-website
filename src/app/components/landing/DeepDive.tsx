@@ -61,7 +61,7 @@ export function DeepDive() {
            </p>
            
            <div className="flex flex-col items-center gap-4">
-              <a href="https://storage.stach.ltd/releases/B2-0.1.0-arm64.dmg" className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] inline-block">
+              <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] inline-block">
                 Download for Mac
               </a>
               <div className="flex items-center gap-4 text-xs text-white/50 mt-4">

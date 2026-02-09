@@ -71,7 +71,7 @@ export function MenuBarFeature() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="order-1 md:order-2 text-center md:text-left"
+          className="order-1 md:order-2 text-left"
         >
           {/*<div className="inline-flex items-center justify-center md:justify-start gap-2 mb-4">
              <div className="w-8 h-8 rounded-lg bg-[#333] flex items-center justify-center shadow-inner border border-white/10">

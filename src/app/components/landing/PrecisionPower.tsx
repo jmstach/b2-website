@@ -128,11 +128,11 @@ export function PrecisionPower() {
           transition={{ duration: 0.8 }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4 text-left md:text-center">
             Small footprint.{" "}
             <span className="text-blue-500">Giant capability.</span>
           </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg text-white/60 max-w-2xl mx-auto text-left md:text-center">
             Full formula support and native formatting tools that feel like a
             part of your Mac.
           </p>

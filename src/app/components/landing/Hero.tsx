@@ -99,10 +99,10 @@ export function Hero({ scrollContainerRef }: HeroProps) {
           className="mt-8 mb-12 flex flex-col items-center gap-4"
         >
           <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
-            Try free for 7 days
+            Try for free
           </a>
-          <p className="text-gray-400 text-xs font-medium tracking-wide">
-            Designed exclusively and only for macOS
+          <p className="text-gray-800 text-s font-medium tracking-wide">
+            Free for 7 days then $6.99 one-time purchase, no subscriptions.
           </p>
         </motion.div>
       </motion.div>

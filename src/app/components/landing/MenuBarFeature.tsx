@@ -84,10 +84,10 @@ export function MenuBarFeature() {
             Menu Bar.
           </h2>
           <p className="text-lg text-white/70 leading-relaxed max-w-md mx-auto md:mx-0">
-            Frictionless entry. B2 lives where you work.
+            Frictionless entry, B2 lives at the tip of your fingers.
           </p>
           <p className="text-lg text-white/70 leading-relaxed max-w-md mx-auto md:mx-0">
-            No more waiting.
+            Designed to be instantly accessible, like a calculator or notepad, but with the power of a spreadsheet.
           </p>
           <p className="text-lg text-white/70 leading-relaxed max-w-md mx-auto md:mx-0">
             Just type <span className="text-blue-500">⌘⇧B</span> and start.

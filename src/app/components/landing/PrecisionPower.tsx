@@ -93,7 +93,7 @@ function TypographyCardContent() {
 }
 
 const cardClass =
-  "group relative bg-[#1c1c1e] rounded-3xl border border-white/10 overflow-hidden aspect-square md:aspect-[4/3] flex flex-col justify-between p-8 hover:border-white/20 transition-colors";
+  "group relative bg-[#1c1c1e] rounded-3xl border border-white/10 overflow-hidden aspect-[5/6] md:aspect-[4/3] flex flex-col justify-between p-8 hover:border-white/20 transition-colors";
 
 const cards = [
   { key: "formulas", Content: FormulasCardContent, delay: 0.2 },
@@ -119,14 +119,14 @@ export function PrecisionPower() {
   }, [api, onSelect]);
 
   return (
-    <section className="min-h-screen w-full flex flex-col items-center justify-center relative snap-start px-6 py-24">
+    <section className="min-h-screen w-full flex flex-col items-center justify-center relative snap-start px-6 py-12 md:py-24">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
             Small footprint.{" "}
@@ -138,10 +138,10 @@ export function PrecisionPower() {
           </p>
         </motion.div>
 
-        {/* Mobile carousel */}
-        <div className="md:hidden">
+        {/* Mobile carousel — break out of section px-6 so cards bleed edge-to-edge */}
+        <div className="md:hidden -mx-6">
           <Carousel
-            opts={{ align: "center", loop: true }}
+            opts={{ align: "center", containScroll: false }}
             setApi={setApi}
           >
             <CarouselContent>

@@ -57,14 +57,14 @@ export function Hero({ scrollContainerRef }: HeroProps) {
       <motion.div 
         style={{ y, opacity }}
         // CHANGE 1: Added h-full (or max-h-full) so this container respects the screen height
-        className="text-center z-10 px-6 max-w-4xl mx-auto flex flex-col items-center w-full h-full"
+        className="text-center z-10 max-w-4xl mx-auto flex flex-col items-center w-full h-full"
       >
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           // CHANGE 2: Added flex-none to ensure the header never shrinks
-          className="flex-none text-5xl md:text-6xl font-semibold tracking-tight text-gray-900 mb-8 mt-16 lg:mt-24"
+          className="flex-none text-5xl md:text-6xl font-semibold tracking-tight text-gray-900 mb-8 mt-16 lg:mt-24 px-6 w-full"
         >
           B2.<br/>A spreadsheet for thinking, not reporting.
         </motion.h1>
@@ -78,16 +78,14 @@ export function Hero({ scrollContainerRef }: HeroProps) {
     rotateY,
     transformStyle: "preserve-3d",
   }}
-  className="relative group [perspective:1000px] flex-1 min-h-0 w-full flex items-start justify-start md:items-center md:justify-center overflow-hidden"
+  className="relative [perspective:1000px] flex-1 min-h-0 w-full overflow-hidden"
 >
-  <div className="relative h-full w-full">
-    <img 
-      src={exampleImage} 
-      alt="B2 App Interface" 
-      className="h-full w-full object-cover object-left-top origin-top-left scale-[2] md:scale-100 md:origin-center md:object-contain md:object-center"
+    <img
+      src={exampleImage}
+      alt="B2 App Interface"
+      className="w-full min-w-[600px] md:min-w-0 h-auto"
     />
     <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none mix-blend-overlay" />
-  </div>
 </motion.div>
 
 
@@ -96,7 +94,7 @@ export function Hero({ scrollContainerRef }: HeroProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-8 mb-12 flex flex-col items-center gap-4"
+          className="mt-8 mb-12 flex flex-col items-center gap-4 px-6 w-full"
         >
           <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
             Try for free

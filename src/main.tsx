@@ -10,6 +10,7 @@
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/app" element={<App />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
       </Routes>

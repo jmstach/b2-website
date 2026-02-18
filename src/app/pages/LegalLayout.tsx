@@ -21,6 +21,7 @@ export function LegalLayout({ children }: { children: React.ReactNode }) {
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-foreground transition-colors">Terms</Link>
+            <Link to="/whats-new" className="hover:text-foreground transition-colors">Release notes</Link>
           </div>
         </footer>
       </div>

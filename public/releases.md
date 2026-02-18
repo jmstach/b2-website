@@ -16,3 +16,25 @@
 - Fixed "Learn More" link in the registration window
 - Removed a macOS Keychain password prompt that appeared on first launch
 - Improved trial period security
+
+## 0.2.7 — 2026-02-14
+
+### Fixed
+- Fixed save failures on fresh installs when the default save directory didn't exist
+
+## 0.2.6 — 2026-02-13
+
+### Improved
+- Formulas are now case-insensitive — `=sum(a1:a5)` works the same as `=SUM(A1:A5)`
+- Formulas are automatically normalised to uppercase when entered
+
+## 0.2.5 — 2026-02-12
+
+### Fixed
+- Fixed licensing activation and environment configuration
+- Fixed trial not starting after deactivating a license
+- Fixed popover and keyboard shortcut behaviour
+- Fixed auto-update system reliability
+
+### Improved
+- Refined notification and banner styling

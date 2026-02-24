@@ -1,6 +1,8 @@
 
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
+import { useState } from 'react';
 import { Cloud, FileJson, Keyboard, Check, Command } from 'lucide-react';
+import { EmailCaptureForm } from '../EmailCaptureForm';
 
 const specs = [
   {
@@ -21,6 +23,9 @@ const specs = [
 ];
 
 export function DeepDive() {
+  const [downloaded, setDownloaded] = useState(false);
+  const [mobileSent, setMobileSent] = useState(false);
+
   return (
     <section className="min-h-screen w-full flex flex-col items-center justify-center relative snap-start px-6 pt-24 pb-12">
       <div className="max-w-4xl mx-auto w-full flex flex-col items-center">
@@ -61,14 +66,70 @@ export function DeepDive() {
            </p>
            
            <div className="flex flex-col items-center gap-4">
-              <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] inline-block">
-                Download for Mac
-              </a>
-              <div className="flex items-center gap-4 text-xs text-white/50 mt-4">
-                 <span className="flex items-center gap-1"><Check size={20} /> One-time purchase</span>
-                 <span className="flex items-center gap-1"><Check size={20} /> No subscriptions</span>
+              {/* Desktop: download CTA that transitions to email capture */}
+              <div className="hidden md:flex flex-col items-center gap-4 w-full">
+                <AnimatePresence mode="wait">
+                  {!downloaded ? (
+                    <motion.div key="cta" exit={{ opacity: 0, y: -10 }} className="flex flex-col items-center gap-4">
+                      <a
+                        href="https://storage.stach.ltd/releases/B2-latest.dmg"
+                        onClick={() => setDownloaded(true)}
+                        className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] inline-block"
+                      >
+                        Download for Mac
+                      </a>
+                      <div className="flex items-center gap-4 text-xs text-white/50 mt-4">
+                        <span className="flex items-center gap-1"><Check size={20} /> One-time purchase</span>
+                        <span className="flex items-center gap-1"><Check size={20} /> No subscriptions</span>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="post-download"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex flex-col items-center gap-3 w-full"
+                    >
+                      <p className="text-white/60 text-sm">Download started! Want updates on B2?</p>
+                      <EmailCaptureForm variant="inline" source="deepdive_desktop_list" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Mobile: email capture instead of download */}
+              <div className="flex md:hidden flex-col items-center gap-3 w-full">
+                <AnimatePresence mode="wait">
+                  {!mobileSent ? (
+                    <motion.div key="mobile-cta" exit={{ opacity: 0, y: -10 }} className="flex flex-col items-center gap-3 w-full">
+                      <p className="text-white/60 text-sm">We'll send you the download link</p>
+                      <EmailCaptureForm variant="inline" source="deepdive_mobile" buttonText="Send link" onSuccess={() => setMobileSent(true)} />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="mobile-post"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex flex-col items-center gap-3 w-full"
+                    >
+                      <p className="text-white/60 text-sm">Link sent! Want updates on B2?</p>
+                      <EmailCaptureForm variant="inline" source="deepdive_mobile_list" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
            </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 w-full max-w-md mx-auto text-center"
+        >
+          <p className="text-white/40 text-sm mb-4">Stay in the loop on B2 updates</p>
+          <EmailCaptureForm variant="footer" source="footer_list" />
         </motion.div>
 
         <footer className="mt-24 w-full flex flex-col md:flex-row justify-between items-center text-xs text-white/50 border-t border-white/5 pt-8">

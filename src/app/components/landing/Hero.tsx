@@ -1,6 +1,7 @@
 
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'motion/react';
-import { useRef, MouseEvent, RefObject } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from 'motion/react';
+import { useRef, useState, MouseEvent, RefObject } from 'react';
+import { EmailCaptureForm } from '../EmailCaptureForm';
 import exampleImage from '../../../assets/be2b154a9e54bff0857390ad7c38305608c33f65.png';
 
 interface HeroProps {
@@ -9,6 +10,7 @@ interface HeroProps {
 
 export function Hero({ scrollContainerRef }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const [heroSent, setHeroSent] = useState(false);
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -96,12 +98,42 @@ export function Hero({ scrollContainerRef }: HeroProps) {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-8 mb-12 flex flex-col items-center gap-4 px-6 w-full"
         >
-          <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
-            Try for free
-          </a>
-          <p className="text-gray-800 text-s font-medium tracking-wide">
-            Free for 7 days then $6.99 one-time purchase, no subscriptions.
-          </p>
+          {/* Desktop: direct download */}
+          <div className="hidden md:flex flex-col items-center gap-4">
+            <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
+              Try for free
+            </a>
+            <p className="text-gray-800 text-s font-medium tracking-wide">
+              Free for 7 days then $6.99 one-time purchase, no subscriptions.
+            </p>
+          </div>
+
+          {/* Mobile: email capture */}
+          <div className="flex md:hidden flex-col items-center gap-3 w-full">
+            <AnimatePresence mode="wait">
+              {!heroSent ? (
+                <motion.div key="hero-cta" exit={{ opacity: 0, y: -10 }} className="flex flex-col items-center gap-3 w-full">
+                  <p className="text-gray-600 text-sm font-medium">
+                    We'll send you the download link
+                  </p>
+                  <EmailCaptureForm variant="hero" source="hero_mobile" onSuccess={() => setHeroSent(true)} />
+                  <p className="text-gray-500 text-xs">
+                    Open the link on your Mac to install B2.
+                  </p>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="hero-post"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex flex-col items-center gap-3 w-full"
+                >
+                  <p className="text-gray-600 text-sm font-medium">Link sent! Want updates on B2?</p>
+                  <EmailCaptureForm variant="hero" source="hero_mobile_list" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </motion.div>
       </motion.div>
     </section>

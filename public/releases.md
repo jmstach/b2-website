@@ -1,5 +1,16 @@
 # B2 Release Notes
 
+## 0.2.9 — 2026-03-14
+
+### New
+- **Smarter Cmd+Arrow jumping** — Cmd+Arrow now stops at the edges of your data instead of always jumping to the end of the grid, matching Excel and Google Sheets behavior
+- **Quick range selection with Cmd+Shift+Arrow** — select entire columns or rows of data in one keystroke
+- **Home/End keys** — Home jumps to the start of the row, End to the end; Cmd+Home goes to A1, Cmd+End to the bottom-right corner
+
+### Fixed
+- Fixed cell references being invisible in the formula bar when clicking to insert a reference during formula editing
+- Home and End keys now correctly move the text cursor when editing a cell, instead of scrolling the grid
+
 ## 0.2.8 — 2026-02-16
 
 ### New

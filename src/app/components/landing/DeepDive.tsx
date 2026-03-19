@@ -13,7 +13,7 @@ const specs = [
   {
     icon: FileJson,
     title: "Send to...",
-    desc: "Need to collaborate or polish? Send it to Excel, Sheets or Numbers."
+    desc: <>Need to collaborate or polish? Send it to Excel, Sheets or Numbers.<br /><span className="text-white/30 text-xs mt-2 inline-block">To open Sheets natively on your Mac try <a href="https://open-in-sheets.stach.ltd" target="_blank" rel="noopener noreferrer" className="italic underline hover:text-white/50 transition-colors">Open In Sheets</a> or similar software.</span></>
   },
   {
     icon: Keyboard,
@@ -49,7 +49,7 @@ export function DeepDive() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
            initial={{ opacity: 0, scale: 0.9 }}
            whileInView={{ opacity: 1, scale: 1 }}
            viewport={{ once: true }}

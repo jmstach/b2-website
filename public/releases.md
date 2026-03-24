@@ -1,5 +1,11 @@
 # B2 Release Notes
 
+## 0.2.10 — 2026-03-24
+
+### Fixed
+- Fixed calculations giving wrong results for numbers with user-entered commas (e.g., SUM of 28,000 + 24,000 showing 62 instead of 62,000)
+- Fixed status bar stats (SUM, AVERAGE, MIN, MAX) showing wrong values for comma-formatted numbers (e.g., 2,639.56 + 1,799.70 showing SUM: 3)
+
 ## 0.2.9 — 2026-03-14
 
 ### New

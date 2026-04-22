@@ -5,7 +5,6 @@ import {
   PutObjectCommand,
 } from "@aws-sdk/client-s3";
 import { Resend } from "resend";
-import { Redis } from "@upstash/redis";
 import { createHmac } from "crypto";
 
 const s3 = new S3Client({
@@ -57,15 +56,7 @@ function signEmail(email: string): string {
     .digest("hex");
 }
 
-const redis = new Redis({
-  url: process.env.KV_REST_API_URL!,
-  token: process.env.KV_REST_API_TOKEN!,
-});
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const RATE_LIMIT_IP = 5;
-const RATE_LIMIT_EMAIL = 2;
-const RATE_LIMIT_WINDOW = 3600; // 1 hour in seconds
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
@@ -81,34 +72,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const validSources = ["hero_mobile", "hero_mobile_list", "deepdive_mobile", "deepdive_mobile_list", "deepdive_desktop_list", "footer_list"];
   if (!validSources.includes(source)) {
     return res.status(400).json({ error: "Invalid source" });
-  }
-
-  const ip =
-    (Array.isArray(req.headers["x-forwarded-for"])
-      ? req.headers["x-forwarded-for"][0]
-      : req.headers["x-forwarded-for"]?.split(",")[0]?.trim()) || "unknown";
-
-  // Fail-open rate limiting: if Redis is unavailable, allow the request through.
-  try {
-    const ipKey = `rate:ip:${ip}`;
-    const ipCount = await redis.incr(ipKey);
-    if (ipCount === 1) await redis.expire(ipKey, RATE_LIMIT_WINDOW);
-    if (ipCount > RATE_LIMIT_IP) {
-      return res.status(429).json({ error: "Too many requests. Try again later." });
-    }
-
-    const emailKey = `rate:email:${email.toLowerCase()}`;
-    const emailCount = await redis.incr(emailKey);
-    if (emailCount === 1) await redis.expire(emailKey, RATE_LIMIT_WINDOW);
-    if (emailCount > RATE_LIMIT_EMAIL) {
-      const message =
-        source === "hero_mobile" || source === "deepdive_mobile"
-          ? "We already sent your download link — check your inbox."
-          : "You're already on the list!";
-      return res.status(429).json({ error: message });
-    }
-  } catch (err) {
-    console.error("Rate limit check failed, allowing request:", err);
   }
 
   try {

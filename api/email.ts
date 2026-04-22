@@ -83,29 +83,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Invalid source" });
   }
 
-  // Rate limit by IP
   const ip =
     (Array.isArray(req.headers["x-forwarded-for"])
       ? req.headers["x-forwarded-for"][0]
       : req.headers["x-forwarded-for"]?.split(",")[0]?.trim()) || "unknown";
 
-  const ipKey = `rate:ip:${ip}`;
-  const ipCount = await redis.incr(ipKey);
-  if (ipCount === 1) await redis.expire(ipKey, RATE_LIMIT_WINDOW);
-  if (ipCount > RATE_LIMIT_IP) {
-    return res.status(429).json({ error: "Too many requests. Try again later." });
-  }
+  // Fail-open rate limiting: if Redis is unavailable, allow the request through.
+  try {
+    const ipKey = `rate:ip:${ip}`;
+    const ipCount = await redis.incr(ipKey);
+    if (ipCount === 1) await redis.expire(ipKey, RATE_LIMIT_WINDOW);
+    if (ipCount > RATE_LIMIT_IP) {
+      return res.status(429).json({ error: "Too many requests. Try again later." });
+    }
 
-  // Rate limit by email
-  const emailKey = `rate:email:${email.toLowerCase()}`;
-  const emailCount = await redis.incr(emailKey);
-  if (emailCount === 1) await redis.expire(emailKey, RATE_LIMIT_WINDOW);
-  if (emailCount > RATE_LIMIT_EMAIL) {
-    const message =
-      source === "hero_mobile" || source === "deepdive_mobile"
-        ? "We already sent your download link — check your inbox."
-        : "You're already on the list!";
-    return res.status(429).json({ error: message });
+    const emailKey = `rate:email:${email.toLowerCase()}`;
+    const emailCount = await redis.incr(emailKey);
+    if (emailCount === 1) await redis.expire(emailKey, RATE_LIMIT_WINDOW);
+    if (emailCount > RATE_LIMIT_EMAIL) {
+      const message =
+        source === "hero_mobile" || source === "deepdive_mobile"
+          ? "We already sent your download link — check your inbox."
+          : "You're already on the list!";
+      return res.status(429).json({ error: message });
+    }
+  } catch (err) {
+    console.error("Rate limit check failed, allowing request:", err);
   }
 
   try {

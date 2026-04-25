@@ -4,7 +4,7 @@ export function PrivacyPolicy() {
   return (
     <LegalLayout>
       <h1>Privacy policy</h1>
-      <p className="text-muted-foreground"><strong>Last updated:</strong> 7 February 2026</p>
+      <p className="text-muted-foreground"><strong>Last updated:</strong> 25 April 2026</p>
       <p>B2 is developed by Stach Ltd. ("we", "us", "our"), based in the United Kingdom. This privacy policy explains what information we collect when you use the B2 application and the b2.stach.ltd website, and how we handle that information.</p>
       <p>We are committed to protecting your privacy. B2 is designed as a local-first application — your spreadsheet data never leaves your device unless you explicitly choose to export or sync it yourself.</p>
 
@@ -26,7 +26,7 @@ export function PrivacyPolicy() {
       <h2>The b2.stach.ltd website</h2>
 
       <h3>Analytics</h3>
-      <p>We use Vercel Web Analytics to understand how visitors use our website. Vercel Analytics does not use cookies and does not collect personal identifiers that could track you across websites. The following aggregated data points may be recorded with each page view: the page URL, referrer, approximate geolocation (country and city, derived from IP address), device type, operating system, and browser. This data is aggregated and cannot be used to identify individual visitors. For more information, see <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel's analytics privacy policy</a>.</p>
+      <p>We use Plausible Analytics (provided by Plausible Insights OÜ) to understand how visitors use our website. Plausible is a privacy-friendly, EU-based analytics service that does not use cookies and does not collect or store any personal data or personal identifiers. It does not track visitors across websites or across sessions. The following aggregated data points may be recorded with each page view: the page URL, referrer, the browser and operating system reported in your User-Agent header, and an approximate country, region, and city derived from your IP address. Your IP address itself is not stored. For more information, see <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer">Plausible's data policy</a> and <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">Plausible's privacy policy</a>.</p>
 
       <h3>Purchases and payment</h3>
       <p>B2 is sold through Polar (Polar Software Inc.), which acts as our merchant of record. When you purchase B2, Polar collects and processes your payment information (such as your name, email address, billing address, and payment details) on our behalf. Polar uses Stripe as its underlying payment processor. We do not directly receive or store your full payment card details.</p>
@@ -36,7 +36,7 @@ export function PrivacyPolicy() {
       <p>Application downloads are served via Cloudflare. When you download B2, Cloudflare may process your IP address and basic request metadata as part of delivering the file. This processing is governed by <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's privacy policy</a>. We do not operate additional logging of individual downloads.</p>
 
       <h3>Cookies</h3>
-      <p>The b2.stach.ltd website does not set any first-party cookies. Third-party services (Vercel, Cloudflare) may set strictly necessary cookies as part of their infrastructure. We do not use cookies for advertising, tracking, or profiling.</p>
+      <p>The b2.stach.ltd website does not set any first-party cookies. Our analytics provider (Plausible) does not use cookies at all. Other third-party services (Vercel, Cloudflare) may set strictly necessary cookies as part of their infrastructure. We do not use cookies for advertising, tracking, or profiling.</p>
 
       <h2>Lawful basis for processing</h2>
       <p>Under the UK General Data Protection Regulation (UK GDPR), we rely on the following lawful bases:</p>
@@ -50,12 +50,13 @@ export function PrivacyPolicy() {
       <p>We do not sell, rent, or trade your personal data. Data may be processed by the following third-party service providers solely in connection with the services described above:</p>
       <ul>
         <li><strong>Polar Software Inc.</strong> (merchant of record, payment processing, and licence validation) — <a href="https://polar.sh/legal/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
-        <li><strong>Vercel</strong> (website hosting and analytics) — <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
+        <li><strong>Vercel</strong> (website hosting) — <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
+        <li><strong>Plausible Insights OÜ</strong> (website analytics, EU-hosted) — <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
         <li><strong>Cloudflare</strong> (content delivery and download hosting) — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">privacy policy</a></li>
       </ul>
 
       <h2>International transfers</h2>
-      <p>Some of our service providers (Polar, Vercel, Cloudflare) may process data outside the United Kingdom. Where this occurs, appropriate safeguards are in place, including standard contractual clauses and adequacy decisions recognised under UK data protection law.</p>
+      <p>Some of our service providers (Polar, Vercel, Plausible, Cloudflare) may process data outside the United Kingdom. Where this occurs, appropriate safeguards are in place, including standard contractual clauses and adequacy decisions recognised under UK data protection law. Plausible's analytics infrastructure is hosted in the European Union.</p>
 
       <h2>Data retention</h2>
       <p>We do not maintain any database of user information. Server logs that may contain IP addresses are retained only for as long as is necessary for operational and security purposes, typically no longer than 30 days, after which they are automatically deleted. Payment and transaction records are retained by Polar in accordance with their own retention policies and applicable legal obligations.</p>

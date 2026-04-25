@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Loader2 } from 'lucide-react';
+import { track } from '../lib/analytics';
 
 type Variant = 'hero' | 'inline' | 'footer';
 type Status = 'idle' | 'loading' | 'success' | 'error' | 'rate_limited';
@@ -44,6 +45,7 @@ export function EmailCaptureForm({ variant, source, onSuccess, buttonText }: Ema
         return;
       }
       if (!res.ok) throw new Error();
+      track('Subscribe', { source });
       setStatus('success');
       onSuccess?.();
     } catch {

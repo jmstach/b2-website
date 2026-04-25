@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { Analytics } from "@vercel/analytics/react";
 
 export function LegalLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,7 +24,6 @@ export function LegalLayout({ children }: { children: React.ReactNode }) {
           </div>
         </footer>
       </div>
-      <Analytics />
     </main>
   );
 }

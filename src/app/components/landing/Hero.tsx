@@ -2,6 +2,7 @@
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from 'motion/react';
 import { useRef, useState, MouseEvent, RefObject } from 'react';
 import { EmailCaptureForm } from '../EmailCaptureForm';
+import { track } from '../../lib/analytics';
 import exampleImage from '../../../assets/be2b154a9e54bff0857390ad7c38305608c33f65.png';
 
 interface HeroProps {
@@ -100,7 +101,7 @@ export function Hero({ scrollContainerRef }: HeroProps) {
         >
           {/* Desktop: direct download */}
           <div className="hidden md:flex flex-col items-center gap-4">
-            <a href="https://storage.stach.ltd/releases/B2-latest.dmg" className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
+            <a href="https://storage.stach.ltd/releases/B2-latest.dmg" onClick={() => track('Download', { source: 'hero' })} className="bg-[#0071e3] hover:bg-[#0077ED] text-white px-8 py-3 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20 cursor-pointer inline-block">
               Try for free
             </a>
             <p className="text-gray-800 text-s font-medium tracking-wide">

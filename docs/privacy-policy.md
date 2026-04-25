@@ -1,6 +1,6 @@
 # Privacy policy
 
-**Last updated:** 7 February 2026
+**Last updated:** 25 April 2026
 
 B2 is developed by Justin Stach ("we", "us", "our"), based in the United Kingdom. This privacy policy explains what information we collect when you use the B2 application and the b2.stach.ltd website, and how we handle that information.
 
@@ -30,7 +30,7 @@ Other than the licence validation and optional update checks described above, th
 
 ### Analytics
 
-We use Vercel Web Analytics to understand how visitors use our website. Vercel Analytics does not use cookies and does not collect personal identifiers that could track you across websites. The following aggregated data points may be recorded with each page view: the page URL, referrer, approximate geolocation (country and city, derived from IP address), device type, operating system, and browser. This data is aggregated and cannot be used to identify individual visitors. For more information, see [Vercel's analytics privacy policy](https://vercel.com/docs/analytics/privacy-policy).
+We use Plausible Analytics (provided by Plausible Insights OÜ) to understand how visitors use our website. Plausible is a privacy-friendly, EU-based analytics service that does not use cookies and does not collect or store any personal data or personal identifiers. It does not track visitors across websites or across sessions. The following aggregated data points may be recorded with each page view: the page URL, referrer, the browser and operating system reported in your User-Agent header, and an approximate country, region, and city derived from your IP address. Your IP address itself is not stored. For more information, see [Plausible's data policy](https://plausible.io/data-policy) and [Plausible's privacy policy](https://plausible.io/privacy).
 
 ### Purchases and payment
 
@@ -44,7 +44,7 @@ Application downloads are served via Cloudflare. When you download B2, Cloudflar
 
 ### Cookies
 
-The b2.stach.ltd website does not set any first-party cookies. Third-party services (Vercel, Cloudflare) may set strictly necessary cookies as part of their infrastructure. We do not use cookies for advertising, tracking, or profiling.
+The b2.stach.ltd website does not set any first-party cookies. Our analytics provider (Plausible) does not use cookies at all. Other third-party services (Vercel, Cloudflare) may set strictly necessary cookies as part of their infrastructure. We do not use cookies for advertising, tracking, or profiling.
 
 ## Lawful basis for processing
 
@@ -59,12 +59,13 @@ Under the UK General Data Protection Regulation (UK GDPR), we rely on the follow
 We do not sell, rent, or trade your personal data. Data may be processed by the following third-party service providers solely in connection with the services described above:
 
 - **Polar Software Inc.** (merchant of record, payment processing, and licence validation) — [privacy policy](https://polar.sh/legal/privacy)
-- **Vercel** (website hosting and analytics) — [privacy policy](https://vercel.com/legal/privacy-policy)
+- **Vercel** (website hosting) — [privacy policy](https://vercel.com/legal/privacy-policy)
+- **Plausible Insights OÜ** (website analytics, EU-hosted) — [privacy policy](https://plausible.io/privacy)
 - **Cloudflare** (content delivery and download hosting) — [privacy policy](https://www.cloudflare.com/privacypolicy/)
 
 ## International transfers
 
-Some of our service providers (Polar, Vercel, Cloudflare) may process data outside the United Kingdom. Where this occurs, appropriate safeguards are in place, including standard contractual clauses and adequacy decisions recognised under UK data protection law.
+Some of our service providers (Polar, Vercel, Plausible, Cloudflare) may process data outside the United Kingdom. Where this occurs, appropriate safeguards are in place, including standard contractual clauses and adequacy decisions recognised under UK data protection law. Plausible's analytics infrastructure is hosted in the European Union.
 
 ## Data retention
 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { Cloud, FileJson, Keyboard, Check, Command } from 'lucide-react';
 import { EmailCaptureForm } from '../EmailCaptureForm';
+import { track } from '../../lib/analytics';
 
 const specs = [
   {
@@ -73,7 +74,10 @@ export function DeepDive() {
                     <motion.div key="cta" exit={{ opacity: 0, y: -10 }} className="flex flex-col items-center gap-4">
                       <a
                         href="https://storage.stach.ltd/releases/B2-latest.dmg"
-                        onClick={() => setDownloaded(true)}
+                        onClick={() => {
+                          track('Download', { source: 'deepdive' });
+                          setDownloaded(true);
+                        }}
                         className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] inline-block"
                       >
                         Download for Mac
